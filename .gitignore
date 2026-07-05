@@ -1,0 +1,15 @@
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Office / Excel temporary lock files (Behad zaroori jab local sheets open hon)
+~$*.xlsx
+.~lock.*.xlsx
+
+# Node / Local environment logs
+*.log
+npm-debug.log*
+
+# Git tracks folder structures but ignores personal session snapshots if any
+.n8n/

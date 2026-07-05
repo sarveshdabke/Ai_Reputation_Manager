@@ -1,0 +1,823 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -992,
+        -112
+      ],
+      "id": "9ce850a2-0c1b-4175-aca6-3d4ab8cfd44e",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "bed8be64-235a-4e21-a26d-a38603648ea9",
+              "name": "review_id",
+              "value": "={{ $json.review_id }}",
+              "type": "string"
+            },
+            {
+              "id": "1320c23b-7ac2-45e6-8dc3-3d9cd47d6d10",
+              "name": "shop_id",
+              "value": "={{ $json.shop_id }}",
+              "type": "string"
+            },
+            {
+              "id": "02e9e0cd-e2f1-4fc1-a94f-fa7d80f54f16",
+              "name": "customer_name",
+              "value": "={{ $json.customer_name }}",
+              "type": "string"
+            },
+            {
+              "id": "4c91dbb5-98a5-4097-9544-096322213819",
+              "name": "rating",
+              "value": "={{ $json.rating }}",
+              "type": "number"
+            },
+            {
+              "id": "e8101806-1bf4-4f0e-9ea9-5a73bdf24c34",
+              "name": "review_text",
+              "value": "={{ $json.review_text }}",
+              "type": "string"
+            },
+            {
+              "id": "3516dd70-99f1-4a34-84da-e688de46dece",
+              "name": "review_date",
+              "value": "={{ $json.review_date }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -16,
+        -192
+      ],
+      "id": "a81fcc96-72d7-40fd-b489-d95f2d829dd8",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5abba14f-2a44-4687-a9a8-be60c8403250",
+              "name": "shop_id",
+              "value": "={{ $json.shop_id }}",
+              "type": "string"
+            },
+            {
+              "id": "bd8a57d1-03f0-4a94-b36a-85e61ab9af71",
+              "name": "business_name",
+              "value": "={{ $json.business_name }}",
+              "type": "string"
+            },
+            {
+              "id": "186047f5-8b8e-4831-bed1-c9c12901dcfe",
+              "name": "owner_name",
+              "value": "={{ $json.owner_name }}",
+              "type": "string"
+            },
+            {
+              "id": "ad0993c1-f1cc-4a47-b6d1-af11136fff6a",
+              "name": "email",
+              "value": "={{ $json.email }}",
+              "type": "string"
+            },
+            {
+              "id": "b479e15e-0bf0-4612-933d-2452e8f77412",
+              "name": "business_type",
+              "value": "={{ $json.business_type }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -432,
+        32
+      ],
+      "id": "681c30e9-d359-48b2-8905-7c8dd35be822",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "fieldsToMatchString": "shop_id",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -208,
+        16
+      ],
+      "id": "6aa42cb1-98f8-4815-89d5-3aa513a672b6",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d679c77f-79aa-4371-8e12-b76982abbcc9",
+              "name": "output",
+              "value": "={{ $json.output }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        272,
+        16
+      ],
+      "id": "fec813b2-6d7c-4198-8943-26dfed6e1e51",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "fieldsToMatchString": "shop_id, shop_id",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -256,
+        288
+      ],
+      "id": "13bc136f-5d50-4c31-a9d2-7508ac54a083",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        128,
+        304
+      ],
+      "id": "789cc922-8e55-471f-9955-5bb3fce0e989",
+      "name": "Merge2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        272,
+        -160
+      ],
+      "id": "e2fec5e5-40dd-452e-ac71-cfb96a9e2190",
+      "name": "Merge4"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        480,
+        80
+      ],
+      "id": "b3d82cd0-b560-4ba1-af49-f1a611d87a71",
+      "name": "Merge3"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "numberInputs": 3,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        672,
+        -176
+      ],
+      "id": "2122aaa1-b15a-4952-bcce-ef1705b6e38c",
+      "name": "Merge5"
+    },
+    {
+      "parameters": {
+        "fileSelector": "mock-data/Reviews.xlsx",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        -800,
+        -176
+      ],
+      "id": "d404f875-dd31-4728-ba9d-0567bca4eb14",
+      "name": "Read_CustomerReviews_Excel"
+    },
+    {
+      "parameters": {
+        "fileSelector": "mock-data/BusinessDetails.xlsx",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        -800,
+        32
+      ],
+      "id": "7acbec16-5ead-4fe9-8b25-957a2b76613d",
+      "name": "Read_BusinessDetails_Excel"
+    },
+    {
+      "parameters": {
+        "operation": "xlsx",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        -608,
+        -176
+      ],
+      "id": "f23d9e19-16c7-4334-bd59-703284654e3b",
+      "name": "Parse_Reviews_XLSX"
+    },
+    {
+      "parameters": {
+        "operation": "xlsx",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        -592,
+        32
+      ],
+      "id": "fb11605d-9ff8-42c3-95f2-3181e92d2454",
+      "name": "Parse_BusinessDetails_XLSX"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "267221e3-a934-4da2-b1c0-10e38bec278b",
+              "leftValue": "={{ $json.rating }}",
+              "rightValue": 3,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            },
+            {
+              "id": "66d21d26-751f-4a42-b6d1-f2e7d18c9804",
+              "leftValue": "={{ $json.processed }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -400,
+        -176
+      ],
+      "id": "cd3d30b2-1aae-471b-bc78-01e86602f52a",
+      "name": "Filter_Unprocessed_Reviews"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an experienced Customer Reputation Management AI working for local businesses.\n\nYour task is to generate a professional public reply that the business owner can directly post on Google Reviews.\n\n========================\nBUSINESS INFORMATION\n========================\n\nBusiness Name: {{ $json.business_name }}\nBusiness Type: {{ $json.business_type }}\nBusiness Owner: {{ $json.owner_name }}\n\n========================\nCUSTOMER REVIEW\n========================\n\nCustomer Name: {{ $json.customer_name }}\nRating: {{ $json.rating }}/5\nReview Date: {{ $json.review_date }}\n\nCustomer Review:\n{{ $json.review_text }}\n\n========================\nOBJECTIVE\n========================\n\nGenerate a reply that feels like it was personally written by the business owner.\n\nThe goal is to:\n\n• Calm the unhappy customer\n• Show empathy\n• Maintain the business reputation\n• Encourage trust from future customers reading the review\n\n========================\nSTRICT RULES\n========================\n\n1. Return ONLY valid JSON.\n\n2. Do NOT use markdown.\n\n3. Do NOT use ```json.\n\n4. Do NOT explain anything.\n\n5. Maximum 70 words.\n\n6. Sound natural and human.\n\n7. Never sound like AI.\n\n8. Never sound overly corporate.\n\n9. Address the customer's actual complaint.\n\n10. Mention the specific issue whenever possible.\nExample:\n- billing mistake\n- rude staff\n- cold coffee\n- delayed refund\n- damaged product\ninstead of generic phrases like \"your experience.\"\n\n11. Never overpromise.\n\n12. Never offer compensation unless the customer already mentioned it.\n\n13. Never guarantee refunds.\n\n14. Never invent facts.\n\n15. If an apology is appropriate, apologize sincerely.\n\n16. Mention the business name exactly ONE time.\n\n17. Do NOT mention the owner's name.\n\n18. Do NOT mention the customer's email.\n\n19. Do NOT ask the customer to email or call.\n\n20. Instead use phrases like:\n\n\"We'd appreciate the opportunity to make this right.\"\n\nor\n\n\"We hope you'll consider giving us another chance.\"\n\n21. Do NOT repeat the same sentence structure across replies.\n\n22. Every reply must feel unique.\n\n23. End positively.\n\n========================\nOUTPUT FORMAT\n========================\nBefore writing the reply, internally identify:\n\n- Main complaint\n- Customer emotion\n- Business risk\n\nUse this understanding to write the reply.\n\nDo NOT include this analysis in the output.\nReturn ONLY this JSON.\n\n{\n  \"review_reply\": \"\"\n}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -32,
+        16
+      ],
+      "id": "b51cf70d-6ea2-4683-b0a4-a2175ec77b85",
+      "name": "AI_Response_Generator",
+      "retryOnFail": false,
+      "maxTries": 2,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        -32,
+        192
+      ],
+      "id": "26b8177f-13c9-4947-ba46-19884352bd48",
+      "name": "Groq_Llama3_LLM",
+      "credentials": {
+        "groqApi": {
+          "id": "mEtgGskZ7u1gadN8",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "your-bot@example.com",
+        "toEmail": "={{$json.email}}",
+        "subject": "=🚨 Action Required: New {{$json.rating}}★ Review for {{$json.business_name}}",
+        "html": "=<html>\n<body style=\"font-family: Arial, sans-serif;\">\n\n<h2>🚨 Negative Review Alert</h2>\n\n<p>Hello <b>{{$json.owner_name}}</b>,</p>\n\n<p>A new negative review has been detected for your business.</p>\n\n<hr>\n\n<p><b>Business:</b> {{$json.business_name}}</p>\n\n<p><b>Customer:</b> {{$json.customer_name}}</p>\n\n<p><b>Rating:</b> {{$json.rating}} ⭐</p>\n\n<p><b>Review Date:</b> {{$json.review_date}}</p>\n\n<p><b>Customer Review:</b></p>\n\n<div style=\"background:#f5f5f5;padding:10px;border-left:4px solid red;\">\n{{$json.review_text}}\n</div>\n\n<br>\n\n<p><b>AI Suggested Reply:</b></p>\n\n<div style=\"background:#eef7ee;padding:10px;border-left:4px solid green;\">\n{{ JSON.parse($json.output).review_reply }}\n</div>\n\n<hr>\n\n<p>\nPlease review the suggested response before posting it publicly on Google Reviews.\n</p>\n\n<p>\nRegards,<br>\n<b>ReviewGuard AI</b><br>\nyour-bot@example.com\n</p>\n\n</body>\n</html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        288,
+        304
+      ],
+      "id": "6be8a8f9-b620-42b3-ac7d-bd7c9c4e61e1",
+      "name": "Dispatch_Alert_Email",
+      "webhookId": "6e560710-1dd3-4b6b-8c0e-84d51d8d5637",
+      "credentials": {
+        "smtp": {
+          "id": "cBWpgjh6tKwMgTrV",
+          "name": "SMTP account 2"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "682c2c2d-f42a-4886-9448-65f1f24766be",
+              "name": "processed",
+              "value": true,
+              "type": "boolean"
+            },
+            {
+              "id": "ae498450-140f-4148-958d-c80188e1c7fb",
+              "name": "alert_sent",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        672,
+        80
+      ],
+      "id": "129b8d82-2c73-40bd-b0f0-76fa78fa2292",
+      "name": "Update_Processed_Flags"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        848,
+        -160
+      ],
+      "id": "3f293a46-afbc-47fe-a5cb-90c60c6d8de9",
+      "name": "Combine_All_Rows_For_Export"
+    },
+    {
+      "parameters": {
+        "operation": "xlsx",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        880,
+        80
+      ],
+      "id": "8b9e9c1c-371f-45fc-a0c8-2c190d4c05e8",
+      "name": "Generate_Final_Excel_Data"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "mock-data/Reviews.xlsx",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        1136,
+        80
+      ],
+      "id": "dbad0200-3d3c-4f3c-b5cd-2ba911cdfdb6",
+      "name": "Overwrite_Local_Excel_File"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        784,
+        384
+      ],
+      "id": "009a7efb-30c9-4aaf-9f0e-2b7e322839fe",
+      "name": "Error Trigger"
+    },
+    {
+      "parameters": {
+        "content": "\"Data Ingestion & Filtering: Reads local Excel sheets and filters out already processed feedback.\"",
+        "color": "#18FF14"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -640,
+        -384
+      ],
+      "id": "35f72bf0-a9e8-45d3-86d8-e194b192d9cd",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "\"AI Engine & Notifications: Generates contextual replies via Groq LLM and alerts the manager via email.\"",
+        "color": "#18FF14"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        16,
+        -384
+      ],
+      "id": "6424fcda-0209-44ca-8cb1-c3baa2208061",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "\"Data Synchronization: Merges the entire database state and updates the master Excel sheet safely.\"",
+        "color": "#18FF14"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        640,
+        -384
+      ],
+      "id": "7802c718-1dbb-4b4c-b9f3-2ca3fc5971f6",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "fromEmail": "your-bot@example.com",
+        "toEmail": "developer@example.com",
+        "subject": "🚨 [ALERT] Review Automation Workflow Failed!",
+        "html": "=<!DOCTYPE html>\n<html>\n<head>\n    <style>\n        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333333; }\n        .container { max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background-color: #f9f9f9; }\n        .header { background-color: #d9534f; color: white; padding: 15px; text-align: center; border-radius: 6px 6px 0 0; font-size: 18px; font-weight: bold; }\n        .content { padding: 20px; background-color: white; border-radius: 0 0 6px 6px; border: 1px solid #e0e0e0; border-top: none; }\n        .error-box { background-color: #fdf2f2; border-left: 4px solid #d9534f; padding: 15px; margin: 15px 0; font-family: monospace; font-size: 14px; color: #b52a27; overflow-x: auto; }\n        .meta-info { font-size: 14px; margin-bottom: 8px; }\n        .footer { text-align: center; margin-top: 20px; font-size: 12px; color: #777777; }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"header\">\n            🚨 Workflow Execution Failure Notice\n        </div>\n        <div class=\"content\">\n            <p>Hey Dev,</p>\n            <p>An unexpected error occurred during the execution of your <strong>Review Management Workflow</strong>. The pipeline has been halted. Please check the details below to debug:</p>\n            \n            <hr style=\"border: 0; border-top: 1px solid #eeeeee; margin: 20px 0;\">\n            \n            <div class=\"meta-info\"><strong>Execution ID:</strong> {{ $json.execution.id }}</div>\n            <div class=\"meta-info\"><strong>Failed Node:</strong> {{ $json.node.name }}</div>\n            <div class=\"meta-info\"><strong>Timestamp:</strong> {{ new Date().toLocaleString() }}</div>\n            \n            <p><strong>Error Message:</strong></p>\n            <div class=\"error-box\">\n                {{ $json.execution.error.message }}\n            </div>\n            \n            <p>Kindly log into your local n8n instance to check the execution logs and re-run the failed items.</p>\n        </div>\n        <div class=\"footer\">\n            Automated Alert System • n8n Local Instance\n        </div>\n    </div>\n</body>\n</html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        992,
+        384
+      ],
+      "id": "eac89982-6fde-4ac4-ae78-defbac4dd563",
+      "name": "Send an Email",
+      "webhookId": "2ab98fdd-5a59-4d05-8e7f-527c51c20416",
+      "credentials": {
+        "smtp": {
+          "id": "cBWpgjh6tKwMgTrV",
+          "name": "SMTP account 2"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Read_CustomerReviews_Excel",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read_BusinessDetails_Excel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "AI_Response_Generator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Merge4",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Merge5",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "Dispatch_Alert_Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge4": {
+      "main": [
+        [
+          {
+            "node": "Merge3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge3": {
+      "main": [
+        [
+          {
+            "node": "Update_Processed_Flags",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge5": {
+      "main": [
+        [
+          {
+            "node": "Combine_All_Rows_For_Export",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read_CustomerReviews_Excel": {
+      "main": [
+        [
+          {
+            "node": "Parse_Reviews_XLSX",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read_BusinessDetails_Excel": {
+      "main": [
+        [
+          {
+            "node": "Parse_BusinessDetails_XLSX",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse_Reviews_XLSX": {
+      "main": [
+        [
+          {
+            "node": "Filter_Unprocessed_Reviews",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse_BusinessDetails_XLSX": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Filter_Unprocessed_Reviews": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Combine_All_Rows_For_Export",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "AI_Response_Generator": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq_Llama3_LLM": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI_Response_Generator",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dispatch_Alert_Email": {
+      "main": [
+        [
+          {
+            "node": "Merge3",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Update_Processed_Flags": {
+      "main": [
+        [
+          {
+            "node": "Merge5",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Combine_All_Rows_For_Export": {
+      "main": [
+        [
+          {
+            "node": "Generate_Final_Excel_Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate_Final_Excel_Data": {
+      "main": [
+        [
+          {
+            "node": "Overwrite_Local_Excel_File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send an Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "YOUR_INSTANCE_ID"
+  }
+}
