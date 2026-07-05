@@ -223,7 +223,7 @@
     },
     {
       "parameters": {
-        "fileSelector": "mock-data/Reviews.xlsx",
+        "fileSelector": "MockData/Reviews.xlsx",
         "options": {}
       },
       "type": "n8n-nodes-base.readWriteFile",
@@ -237,7 +237,7 @@
     },
     {
       "parameters": {
-        "fileSelector": "mock-data/BusinessDetails.xlsx",
+        "fileSelector": "MockData/Business_Master.xlsx",
         "options": {}
       },
       "type": "n8n-nodes-base.readWriteFile",
@@ -439,7 +439,7 @@
     {
       "parameters": {
         "operation": "write",
-        "fileName": "mock-data/Reviews.xlsx",
+        "fileName": "MockData/Reviews.xlsx",
         "options": {}
       },
       "type": "n8n-nodes-base.readWriteFile",
